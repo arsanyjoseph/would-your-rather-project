@@ -33,8 +33,8 @@ class App extends React.Component {
             <Route path = '/home'> <Home/></Route>
             <Route path = '/add'><NewQuestion/></Route>
             <Route path = '/leaderboard'><LeaderDashboard/></Route>
+            <Route exact path='/questions/undefined' component={NoMatch}/>
             <Route path = "/questions/:qId"><PollToAnswer/></Route>
-            <Route exact path='*' component={NoMatch}/>
           </Switch>
         </Router>
       </div> 
