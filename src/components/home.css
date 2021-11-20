@@ -1,0 +1,25 @@
+.homeContainer {
+    border: 2px solid black;
+    border-radius: 2px;
+    margin: 0 auto;
+    max-width: 50em;
+}
+
+.homeTitle {
+    background-color: rgb(202, 202, 202);
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.homeTitle > button {
+    font-size: large;
+    border: none;
+    background-color: transparent;
+    margin: 0.25em 1em;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(88, 88, 88);
+}

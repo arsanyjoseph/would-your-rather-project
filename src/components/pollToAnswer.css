@@ -1,0 +1,104 @@
+.pollToAnswerContainer {
+    margin: 0 auto;
+    border: 2px solid black;
+    max-width: 20em;
+    max-height: 20em;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.pollToAnswerTitle {
+    background-color: orange;
+    margin: 0;
+    padding: 2px;
+    font-size: 12pt;
+    font-weight: bolder;
+}
+
+.pollToAnswerBody > img {
+    border-radius: 50%;
+    float: left;
+    margin: 5px;
+    margin-right: 20px;
+    height: 50px;
+    width: 50px;
+}
+
+.pollToAnswerDetails * {
+    font-size: 10pt;
+}
+
+.pollToAnswerDetails > div {
+    font-weight: bolder;
+}
+
+.pollToAnswerDetails > form > label {
+    margin-bottom: 15px;
+    padding-bottom: 2px;
+}
+
+.pollToAnswerDetails {
+    display: block;
+    padding: 5px;
+    margin: 2px;
+    margin-left: 50px;
+}
+
+.pollToAnswerDetails > form > button {
+    margin-left: 5em;
+    margin-top: 5px;
+}
+
+.answeredContainer {
+    border: 2px solid black;
+    border-radius: 3px;
+    width: 50em;
+    margin: 0 auto;
+}
+
+.authorTitle {
+    background-color: orange;
+    font-weight: 900;
+}
+
+.answerDetails > img {
+    border-radius: 50%;
+    float: left;
+    margin: 5px;
+    margin-right: 20px;
+    height: 100px;
+    width: 100px;
+}
+
+.answerDetails > div {
+    font-weight: 800;
+}
+
+.options {
+    padding: 5px;
+    text-align: center;
+}
+
+.options > div {
+    margin-top: 5px;
+    border: 2px solid black;
+    width: 20em;
+    margin: 10px auto;
+    padding: 20px 2px;
+    background-color: rgb(176, 203, 252);
+    font-size: 18pt;
+    border-radius: 10px;
+}
+
+.answerDetails > .wouldYouRather {
+    font-size: 18pt;
+}
+
+.options > div > p {
+    font-size: 12pt;
+}
+
+.trial {
+    background-color: crimson;
+}

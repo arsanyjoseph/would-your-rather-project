@@ -1,0 +1,57 @@
+.signInContainer {
+    border-radius: 5px;
+    margin: 10px auto;
+    border: 2px solid black;
+    padding: 5px;
+    max-width: 35%;
+    align-items: center;
+    height: 15em;
+    text-align: center;
+}
+
+.signInTitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    margin: 0 auto;
+    background-color: rgba(2, 6, 71, 0.911);
+    padding: 2px 5px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-top: 2px;
+}
+
+.signInTitle * {
+    margin: 0 auto;
+}
+
+.signIn {
+    font-size: small;
+    padding-top: 5px;
+    color: orange;
+}
+
+.formLabel {
+    font-weight: bolder;
+    padding: 2px;
+    font-size: small;
+}
+
+.signInContainer > img {
+    height: 5em;
+    width: 5em;
+    margin: 5px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px 2px gray;
+}
+
+.selectBox {
+    border-radius: 2px;
+    font-style: italic;
+    display: block;
+    margin: 0 auto;
+}
+
+.signInContainer > button {
+    font-size:14pt;
+}

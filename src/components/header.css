@@ -1,0 +1,10 @@
+.headerTitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18pt;
+    font-weight: 700;
+    border-radius: 2px;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgb(174, 181, 184);
+    text-align: center ;
+}

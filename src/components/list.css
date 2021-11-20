@@ -1,0 +1,13 @@
+.listContainer {
+    max-height: fit-content;
+    max-width: 20em;
+    margin: 0 auto;
+    padding: 5px 0;
+    /*border: 2px solid black;*/
+}
+
+.listContainer > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
