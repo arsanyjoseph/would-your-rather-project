@@ -4,7 +4,7 @@ import NavBar from "./navBar";
 import './newQuestion.css'
 import handleCreateQuestion from "../actions/handleCreateQuestion"
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 
 
 export default function NewQuestion () {
@@ -13,7 +13,7 @@ export default function NewQuestion () {
     const [optionTwo, setOptionTwo] = useState()
 
     const dispatch = useDispatch()
-
+    const history = useHistory()
     const questionNew = {
         optionOneText: optionOne,
         optionTwoText: optionTwo,
@@ -24,6 +24,7 @@ export default function NewQuestion () {
         dispatch(handleCreateQuestion(questionNew)).then(()=>{
             setOptionOne('')
             setOptionTwo('')
+            history.push('/home')
         })
         
     }

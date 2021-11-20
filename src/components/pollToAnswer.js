@@ -39,7 +39,7 @@ export default function PollToAnswer () {
         } else if (selectedOption == 'optionTwo') {
             setOptionTwoSelected(true)
         }
-    })
+    },[selectedOption])
     if (answers.includes(qId)){
         return (
         <div>

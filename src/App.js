@@ -9,6 +9,7 @@ import {handleInitialQuestions} from "./actions/handleInitialQuestions"
 import PollToAnswer from "./components/pollToAnswer";
 import { handleInitialData } from "./actions/handleInitialData";
 import NoMatch from "./components/nomatch";
+import {Switch} from 'react-router-dom'
 
 class App extends React.Component {
   state = {}
@@ -27,12 +28,14 @@ class App extends React.Component {
     return (
       <div className='AppContainer'>
         <Router>
-          <Route path='*'><NoMatch /></Route>
-          <Route exact path = '/'><SignIn/></Route>
-          <Route exact path = '/home'> <Home/></Route>
-          <Route exact path = '/add'><NewQuestion/></Route>
-          <Route exact path = '/leaderboard'><LeaderDashboard/></Route>
-          <Route exact path = "/questions/:qId"><PollToAnswer/></Route>
+          <Switch>
+            <Route exact path = '/'><SignIn/></Route>
+            <Route path = '/home'> <Home/></Route>
+            <Route path = '/add'><NewQuestion/></Route>
+            <Route path = '/leaderboard'><LeaderDashboard/></Route>
+            <Route path = "/questions/:qId"><PollToAnswer/></Route>
+            <Route exact path='*' component={NoMatch}/>
+          </Switch>
         </Router>
       </div> 
     )}
