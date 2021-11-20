@@ -24,7 +24,6 @@ export default function NewQuestion () {
         dispatch(handleCreateQuestion(questionNew)).then(()=>{
             setOptionOne('')
             setOptionTwo('')
-            window.location = window.origin +'/home'
         })
         
     }
@@ -40,7 +39,7 @@ export default function NewQuestion () {
                 <input type='text' onChange={(e)=> setOptionOne(e.target.value)}></input>
                 <div>OR</div>
                 <input type='text' onChange={(e)=> setOptionTwo(e.target.value)}></input> <br/>
-                <Link to='./home'><button onClick={(e) => handleSubmit(e)}>Create</button></Link>
+                <Link to='/'><button onClick={(e) => handleSubmit(e)}>Create</button></Link>
             </form>
         </div>   
         </div>

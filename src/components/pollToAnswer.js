@@ -1,11 +1,9 @@
-import react , {useState} from "react";
+import react , {useState, useEffect} from "react";
 import NavBar from "./navBar";
 import './pollToAnswer.css'
 import Header from "./header";
 import { useSelector, useDispatch } from "react-redux";
-import { addAnswer } from "../actions/answerQuestion";
-import { useLocation} from "react-router";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import handleAnswerQuestion from "../actions/handleAnswerQuestion";
 
 export default function PollToAnswer () {
@@ -32,7 +30,16 @@ export default function PollToAnswer () {
         dispatch(handleAnswerQuestion(authedUser, qId, answer))
         e.preventDefault();
     }
-
+    const selectedOption = users[authedUser].answers[qId]
+    const [optionOneSelected, setOptionOneSelected] = useState(false)
+    const [optionTwoSelected, setOptionTwoSelected] = useState(false)
+    useEffect (()=> {
+        if(selectedOption == 'optionOne') {
+            setOptionOneSelected(true)
+        } else if (selectedOption == 'optionTwo') {
+            setOptionTwoSelected(true)
+        }
+    })
     if (answers.includes(qId)){
         return (
         <div>
@@ -44,17 +51,17 @@ export default function PollToAnswer () {
                     <img src={pollAvatar(findAuthor(qId))} alt ='avatarLogo'/>
                     <div className='wouldYouRather'>Would You Rather:</div>
                     <div className='options'>
-                        <div>
+                        <div className='optionOne' style={ { backgroundColor: optionOneSelected ? 'red' : 'none' } }>
                             {firstOption(qId)}
                             <br/>
                             <p> {optionOneVote} out of {totalVotes} votes</p>
-                            <p> {optionOneVote/totalVotes * 100}%    voted for this option</p>
+                            <p> {Math.round(optionOneVote/totalVotes * 100)}%    voted for this option</p>
                         </div>
-                        <div>
+                        <div className='optionTwo' style={ { backgroundColor: optionTwoSelected ? 'red' : 'none' } }>
                             {secondOption(qId)}
                             <br/>
                             <p>{optionTwoVote} out of {totalVotes} votes</p>
-                            <p> {optionTwoVote/totalVotes * 100}%    voted for this option</p>
+                            <p> {Math.round(optionTwoVote/totalVotes * 100)}%    voted for this option</p>
                         </div>  
                     </div>
                 </div>

@@ -4,8 +4,6 @@ import {setAuthedUser} from "../actions/authedUser";
 import { useSelector, useDispatch } from "react-redux";
 import Header from "./header";
 import { Link } from "react-router-dom";
-import { handleInitialData } from "../actions/handleInitialData";
-import { useEffect } from "react";
 
 
 export default function SignIn () {

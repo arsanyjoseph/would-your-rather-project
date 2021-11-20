@@ -10,7 +10,6 @@ export default function handleAnswerQuestion (user, QID, ans) {
             questionID: QID,
             answer: ans
         }
-        console.log(answered)
         return _saveQuestionAnswer(answered)
             .then(()=> {
                 dispatch(addUserA(answered))

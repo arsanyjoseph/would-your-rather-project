@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import {handleInitialQuestions} from "./actions/handleInitialQuestions"
 import PollToAnswer from "./components/pollToAnswer";
 import { handleInitialData } from "./actions/handleInitialData";
+import NoMatch from "./components/nomatch";
+
 class App extends React.Component {
   state = {}
   initiateData = () => {
@@ -25,6 +27,7 @@ class App extends React.Component {
     return (
       <div className='AppContainer'>
         <Router>
+          <Route path='*'><NoMatch /></Route>
           <Route exact path = '/'><SignIn/></Route>
           <Route exact path = '/home'> <Home/></Route>
           <Route exact path = '/add'><NewQuestion/></Route>
