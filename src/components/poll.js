@@ -10,6 +10,12 @@ export default function Poll (props) {
     const pollAvatar = (author) => users[author].avatarURL
     const firstOption = (questionId) => questions[questionId].optionOne.text
     const qId = props.qId
+    
+    const checkId = (id) => {
+        if(questionsArray.includes(id)) {
+            return `/questions/${id}`
+        } 
+    }
     return (
         <div className='pollContainer'>
             <div className='pollTitle'>{findAuthor(qId)} Asks</div>
@@ -18,7 +24,7 @@ export default function Poll (props) {
                 <span className='pollDetails'>
                     <span>Would You Rather:</span>
                     <span>{firstOption(qId)}....</span>
-                    <Link to= {`/questions/${qId}`}><button>View</button></Link>
+                    <Link to= {checkId(qId)}><button>View</button></Link>
                 </span>
             </div>
         </div>
