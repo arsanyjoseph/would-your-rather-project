@@ -10,7 +10,7 @@ export default function Poll (props) {
     const pollAvatar = (author) => users[author].avatarURL
     const firstOption = (questionId) => questions[questionId].optionOne.text
     const qId = props.qId
-    
+    const questionsArray = Object.keys(questions)
     const checkId = (id) => {
         if(questionsArray.includes(id)) {
             return `/questions/${id}`
