@@ -5,6 +5,7 @@ import Header from "./header";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import handleAnswerQuestion from "../actions/handleAnswerQuestion";
+import NoMatch from "./nomatch";
 
 export default function PollToAnswer () {
     const [answer, setAnswer] = useState('')
@@ -22,8 +23,8 @@ export default function PollToAnswer () {
 
     const answers = Object.keys(users[authedUser].answers)
 
-    const optionOneVote = questions[qId].optionOne.votes.length
-    const optionTwoVote = questions[qId].optionTwo.votes.length 
+    const optionOneVote = Object.keys(questions).includes(qId) ? questions[qId].optionOne.votes.length : '5555'
+    const optionTwoVote = Object.keys(questions).includes(qId) ? questions[qId].optionTwo.votes.length : '5555' 
     const totalVotes =  optionOneVote + optionTwoVote
     
     const handleSubmitAnswer = (e)=> {
@@ -40,6 +41,11 @@ export default function PollToAnswer () {
             setOptionTwoSelected(true)
         }
     },[selectedOption])
+    
+    if (optionOneVote === '5555' || optionTwoVote === '555') {
+        return <NoMatch/>
+    }
+        
     if (answers.includes(qId)){
         return (
         <div>
